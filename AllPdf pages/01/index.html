@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Poshan Abhiyaan & Poshan Vatika | Nutrition from Our Own Garden</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @page {
+      size: A4;
+      margin: 0;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      color: #2e3e3e;
+      line-height: 1.6;
+    }
+    .container {
+      width: 85%;
+      margin: 30px 0;
+      background: #fff;
+      border-radius: 25px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+      padding: 60px 50px;
+      position: relative;
+      overflow: hidden;
+    }
+    .container::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 8px;
+      background: linear-gradient(90deg, #388e3c 0%, #ffc107 50%, #388e3c 100%);
+    }
+    .leaf-decoration {
+      position: absolute;
+      opacity: 0.03;
+      z-index: 0;
+    }
+    .leaf-1 {
+      top: 10%;
+      right: 5%;
+      font-size: 180px;
+      transform: rotate(15deg);
+    }
+    .leaf-2 {
+      bottom: 10%;
+      left: 5%;
+      font-size: 150px;
+      transform: rotate(-10deg);
+    }
+    .title-section {
+      text-align: center;
+      margin-bottom: 60px;
+      position: relative;
+      z-index: 1;
+    }
+    .title-section h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 52px;
+      margin: 0;
+      font-weight: 700;
+      color: #2e7d32;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+      line-height: 1.2;
+      margin-bottom: 15px;
+    }
+    .title-section h2 {
+      font-size: 28px;
+      margin: 15px 0 20px 0;
+      font-weight: 500;
+      color: #388e3c;
+      font-style: italic;
+    }
+    .title-divider {
+      width: 120px;
+      height: 4px;
+      background: linear-gradient(90deg, #388e3c 0%, #ffc107 50%, #388e3c 100%);
+      margin: 25px auto;
+      border-radius: 2px;
+    }
+    .subtitle, .author {
+      font-size: 20px;
+      margin: 10px 0;
+      font-weight: 500;
+    }
+    .subtitle {
+      color: #689f38;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .author {
+      font-style: italic;
+      color: #8d6e63;
+      margin-top: 20px;
+    }
+    .section {
+      margin-top: 50px;
+      font-size: 17px;
+      line-height: 1.7;
+      position: relative;
+      z-index: 1;
+    }
+    .section h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      margin-bottom: 25px;
+      font-weight: 600;
+      color: #388e3c;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #c8e6c9;
+      display: inline-block;
+    }
+    .section ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    .section ul li {
+      margin-bottom: 16px;
+      padding-left: 30px;
+      position: relative;
+    }
+    .section ul li::before {
+      content: "•";
+      color: #ffc107;
+      font-weight: bold;
+      font-size: 20px;
+      position: absolute;
+      left: 0;
+      top: -2px;
+    }
+    .section ul li b {
+      font-weight: 600;
+      color: #2e7d32;
+    }
+    .image-section {
+      text-align: center;
+      margin: 40px 0;
+      position: relative;
+      z-index: 1;
+    }
+    .image-section img {
+      width: 85%;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
+    }
+    .image-section img:hover {
+      transform: scale(1.01);
+    }
+    .image-caption {
+      font-style: italic;
+      color: #689f38;
+      margin-top: 15px;
+      font-size: 16px;
+      padding: 0 10%;
+    }
+    .quote-box {
+      background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+      border-left: 4px solid #388e3c;
+      padding: 25px;
+      margin: 40px 0;
+      border-radius: 0 12px 12px 0;
+      position: relative;
+      z-index: 1;
+    }
+    .quote-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      color: #2e7d32;
+      font-style: italic;
+      text-align: center;
+    }
+    .icon-list {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 30px 0;
+      flex-wrap: wrap;
+    }
+    .icon-item {
+      text-align: center;
+      width: 120px;
+    }
+    .icon-circle {
+      width: 70px;
+      height: 70px;
+      background: #e8f5e9;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 15px;
+      font-size: 28px;
+      color: #388e3c;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    }
+    .icon-label {
+      font-size: 14px;
+      font-weight: 500;
+      color: #2e7d32;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 1px solid #c8e6c9;
+      color: #689f38;
+      font-size: 14px;
+    }
+    @media (max-width: 768px) {
+      .container {
+        width: 95%;
+        padding: 40px 25px;
+      }
+      .title-section h1 {
+        font-size: 36px;
+      }
+      .title-section h2 {
+        font-size: 22px;
+      }
+      .section h3 {
+        font-size: 22px;
+      }
+      .image-section img {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <i class="leaf-decoration leaf-1 fas fa-leaf"></i>
+    <i class="leaf-decoration leaf-2 fas fa-leaf"></i>
+
+    <!-- Title Section -->
+    <div class="title-section">
+      <h1>Poshan Abhiyaan & Poshan Vatika</h1>
+      <h2>Nutrition from Our Own Garden</h2>
+      <div class="title-divider"></div>
+      <p class="subtitle"><i class="fas fa-seedling"></i> Healthy Food, Healthy Life</p>
+      <p class="author">By: Ajay</p>
+    </div>
+
+    <div class="image-section">
+      <img src="https://www.gaonconnection.com/wp-content/uploads/2024/10/poshan-vatika-nutri-garden-model-Poshan-Abhiyaan-chemical-free-vegetable-farming-health-income-1.png" alt="Poshan Vatika Garden">
+      <p class="image-caption">Poshan Vatika: A community-led nutritional garden promoting sustainable agriculture and healthy eating.</p>
+    </div>
+
+    <!-- Introduction Section -->
+    <div class="section">
+      <h3>Introduction</h3>
+      <ul>
+        <li>Poshan Vatikas are nutrition gardens developed in schools and community spaces to grow vegetables, fruits, and medicinal plants.</li>
+        <li>The aim is to provide fresh, local, and nutritious food, improve dietary diversity, and enhance health among children and women.</li>
+        <li>Gardens promote self-reliance and ensure better freshness and nutrient retention in food.</li>
+        <li>They also serve educational purposes, teaching gardening, nutrition, and healthy eating habits to children and communities.</li>
+        <li>Evidence shows that Poshan Vatikas improve food security and provide easy access to nutrient-rich foods.</li>
+      </ul>
+    </div>
+
+    <!-- Icon List -->
+    <div class="icon-list">
+      <div class="icon-item">
+        <div class="icon-circle">
+          <i class="fas fa-apple-alt"></i>
+        </div>
+        <div class="icon-label">Nutrition</div>
+      </div>
+      <div class="icon-item">
+        <div class="icon-circle">
+          <i class="fas fa-seedling"></i>
+        </div>
+        <div class="icon-label">Gardening</div>
+      </div>
+      <div class="icon-item">
+        <div class="icon-circle">
+          <i class="fas fa-users"></i>
+        </div>
+        <div class="icon-label">Community</div>
+      </div>
+      <div class="icon-item">
+        <div class="icon-circle">
+          <i class="fas fa-graduation-cap"></i>
+        </div>
+        <div class="icon-label">Education</div>
+      </div>
+    </div>
+
+    <!-- Objectives Section -->
+    <div class="section">
+      <h3>Objectives of Poshan Vatika</h3>
+      <ul>
+        <li><b>Provide Fresh & Organic Vegetables/Fruits:</b> Ensure a regular supply of locally grown, chemical-free produce for communities.</li>
+        <li><b>Combat Malnutrition & Hidden Hunger:</b> Enhance dietary diversity and provide essential micronutrients to reduce hidden hunger.</li>
+        <li><b>Spread Awareness About Healthy Diets:</b> Educate children and communities about balanced diets and nutritional values of various foods.</li>
+        <li><b>Encourage Children Towards Gardening:</b> Foster interest in gardening, healthy eating habits, and sustainable agricultural practices among children.</li>
+      </ul>
+    </div>
+
+    <div class="image-section">
+      <img src="https://w.ndtvimg.com/sites/3/2021/09/02163957/poshan_maah_2021.jpg" alt="Poshan Vatika Activities">
+      <p class="image-caption">Community members participating in Poshan Vatika activities and learning about nutrition.</p>
+    </div>
+
+    <!-- Link with Poshan Abhiyaan Section -->
+    <div class="section">
+      <h3>Link with Poshan Abhiyaan</h3>
+      <ul>
+        <li><b>Launched by Government of India in 2018:</b> Aimed at eradicating malnutrition in children, women, and adolescent girls.</li>
+        <li><b>Focus:</b> Addressing under-nutrition, stunting, anaemia, and low birth weight through a holistic approach.</li>
+        <li><b>Convergence:</b> Integrating various nutrition-related schemes and promoting community involvement.</li>
+        <li><b>Poshan Vatika's Role:</b> Supports the mission by ensuring the availability of nutritious food through locally grown produce.</li>
+      </ul>
+    </div>
+
+    <!-- What Can We Grow Section -->
+    <div class="section">
+      <h3>What Can We Grow?</h3>
+      <ul>
+        <li><b>Vegetables:</b> Spinach, carrot, tomato, beans, cauliflower</li>
+        <li><b>Fruits:</b> Guava, papaya, banana, lemon</li>
+        <li><b>Herbs/Medicinal Plants:</b> Tulsi, aloe vera, mint, curry leaves</li>
+      </ul>
+    </div>
+
+    <div class="image-section">
+      <img src="https://www.kisanofindia.com/wp-content/uploads/2022/01/%E0%A4%95%E0%A4%BF%E0%A4%B8%E0%A4%BE%E0%A4%A8-%E0%A4%A6%E0%A4%BF%E0%A4%B5%E0%A4%B8-Week-Special-25.jpg" alt="Garden Produce">
+      <p class="image-caption">Fresh, organic produce from a Poshan Vatika garden, rich in nutrients and free from chemicals.</p>
+    </div>
+
+    <!-- Benefits Section -->
+    <div class="section">
+      <h3>Benefits of Poshan Vatika</h3>
+      <ul>
+        <li><b>Improves Nutrition & Immunity:</b> Poshan Vatikas provide fresh, organic produce rich in vitamins and minerals, strengthening immunity for children and adults alike.</li>
+        <li><b>Supplies Vitamins, Minerals, & Proteins:</b> Regular consumption of garden produce ensures balanced diets, fulfilling essential nutritional requirements naturally.</li>
+        <li><b>Reduces Dependency on Market Food:</b> Growing food locally decreases reliance on packaged or store-bought items, fostering self-sufficiency.</li>
+        <li><b>Promotes Eco-Friendly Habits:</b> Organic gardening encourages sustainable practices, reducing chemical usage and promoting environmental care.</li>
+        <li><b>Stress Relief & Learning by Doing:</b> Gardening activities provide therapeutic benefits and hands-on learning experiences for all age groups, enhancing mental well-being.</li>
+      </ul>
+    </div>
+
+    <!-- Quote Box -->
+    <div class="quote-box">
+      <p class="quote-text">"Let's Grow Together, Eat Healthy, and Stay Fit!"</p>
+    </div>
+
+    <!-- Role of Schools/Community Section -->
+    <div class="section">
+      <h3>Role of Schools & Community</h3>
+      <ul>
+        <li><b>Involve Students in Plantation:</b> Engaging students in planting activities develops responsibility, awareness of nutrition, and a connection with food sources.</li>
+        <li><b>Use Garden Produce in Mid-Day Meals:</b> Fresh vegetables from Poshan Vatikas enhance the nutritional quality of school meals and promote healthy eating habits among children.</li>
+        <li><b>Teach Composting & Organic Farming:</b> Schools and communities can educate students on sustainable practices, including composting and organic cultivation, encouraging eco-conscious behavior.</li>
+        <li><b>Spread Awareness About 'Nutrition First':</b> By organizing campaigns, workshops, and interactive sessions, communities emphasize the importance of nutrition, healthy diets, and well-being.</li>
+        <li>Through these practices, Poshan Vatikas not only improve dietary outcomes but also foster hands-on learning, teamwork, environmental stewardship, and life skills among children and community members.</li>
+      </ul>
+    </div>
+
+    <div class="image-section">
+      <img src="https://scontent.fmyq1-1.fna.fbcdn.net/v/t39.30808-6/474524554_936603495262019_7115119309176833489_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_ohc=FMzdNkkE1qAQ7kNvwEPo31L&_nc_oc=AdlwEPP22k9jeHzprXmWdhuDgB6nuZVSMG3v5BhLTHEqNFWQAl_Sc1fS0Pg8wEiS_n0&_nc_zt=23&_nc_ht=scontent.fmyq1-1.fna&_nc_gid=zKQNHYsHQqeyMhu1WP4sKA&oh=00_AfYI_IhVIu0Xjv5uAOHiG7cVFJJjk8H7U5nOHcPCWJ1owg&oe=68D6D504" alt="Community Garden">
+      <p class="image-caption">A thriving Poshan Vatika demonstrating community participation and sustainable gardening practices.</p>
+    </div>
+
+    <!-- Students' Participation Section -->
+    <div class="section">
+      <h3>Students' Participation</h3>
+      <ul>
+        <li><b>Daily Care: Watering, Weeding, Mulching:</b> Students take responsibility for routine garden maintenance, learning the importance of care, consistency, and patience in cultivating plants.</li>
+        <li><b>Learning Science Through Gardening:</b> Hands-on gardening teaches students about plant biology, soil science, seasonal growth, and environmental science in a practical way.</li>
+        <li><b>Organizing 'Nutrition Day' with Harvested Food:</b> Students engage in planning and executing special events using produce from the garden, encouraging teamwork, creativity, and understanding of nutrition.</li>
+        <li>Active participation helps students develop responsibility, connect with nature, and gain knowledge about healthy diets, sustainable agriculture, and life skills while fostering community engagement.</li>
+      </ul>
+    </div>
+
+    <!-- Success Stories / Examples Section -->
+    <div class="section">
+      <h3>Success Stories / Examples</h3>
+      <ul>
+        <li><b>Schools & Anganwadis Developing Poshan Vatikas:</b> Numerous schools and anganwadis across India have successfully established Poshan Vatikas, serving as a source of fresh produce and learning hubs for children.</li>
+        <li><b>Fresh Vegetables in Meals:</b> Students benefit as produce from these gardens is incorporated into mid-day meals, ensuring better nutrition and promoting healthy eating habits.</li>
+        <li><b>Community Impact:</b> Communities involved in maintaining these gardens witness a noticeable reduction in malnutrition cases and gain awareness about sustainable agriculture.</li>
+        <li><b>Educational Benefits:</b> Students develop practical knowledge of gardening, nutrition, and environmental conservation, fostering responsibility, teamwork, and eco-conscious behavior.</li>
+        <li><b>Overall Outcome:</b> Poshan Vatikas strengthen food security, enhance dietary diversity, promote health awareness, and create a culture of nutrition-first thinking in schools and communities.</li>
+      </ul>
+    </div>
+
+    <!-- Conclusion & Message Section -->
+    <div class="section">
+      <h3>Conclusion & Message</h3>
+      <ul>
+        <li><b>"Apna Khud ka Bagicha = Apna Khud ka Swasthya":</b> Emphasizes that growing your own garden directly contributes to personal and family health.</li>
+        <li><b>Step Towards Healthy India, Strong India:</b> Poshan Vatikas improve nutrition locally and foster a nation-wide culture of health, wellness, and sustainable living.</li>
+        <li><b>Let's Grow Together, Eat Healthy, and Stay Fit!:</b> Encourages students, schools, communities, and families to participate actively in gardening, adopt healthy eating habits, and promote overall well-being.</li>
+      </ul>
+    </div>
+
+    <!-- Image Section -->
+    <div class="image-section">
+      <img src="https://ekalgramothan.co.in/wp-content/themes/twentysixteen-child/images/4/4_.jpg" alt="Successful Poshan Vatika">
+      <p class="image-caption">A successful Poshan Vatika model showing lush growth and community involvement.</p>
+    </div>
+
+    <div class="footer">
+      <p>Poshan Abhiyaan - National Nutrition Mission | Promoting Health and Nutrition Across India</p>
+    </div>
+  </div>
+</body>
+</html>
