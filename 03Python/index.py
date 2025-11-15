@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 # PDF filename
 filename = "full_in_demand_tech_stacks.pdf"
 
-# Create PDF document
+# Create PDF document dpme some changes here
 doc = SimpleDocTemplate(filename, pagesize=A4)
 styles = getSampleStyleSheet()
 content = []
