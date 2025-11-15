@@ -88,7 +88,7 @@ pdf.section_title("Interests")
 interests = ["Travelling", "Painting"]
 pdf.add_list(interests)
 
-# Save PDF
+# Save PDF all pdf here 
 pdf_file_path = r"D:\My work\Python\03\Palak_Thakur_Resume_Styled_Professional.pdf"
 pdf.output(pdf_file_path)
 print("PDF successfully created at:", pdf_file_path)
